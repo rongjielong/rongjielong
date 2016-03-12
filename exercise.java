@@ -64,6 +64,28 @@ public class exercise {
 			originalMoney=sumValue;
 			System.out.println("需要本金"+originalMoney+"元");
 		}
+		do{
+			System.out.println("请问您想要计算时间问题吗：1.需要 2.不需要");
+			select=new Scanner(System.in).nextInt();
+			}while(select!=1&&select!=2);
+		if(select==1){
+			System.out.println("请输入您想要存储的金额数量：");
+			originalMoney=new Scanner(System.in).nextDouble();
+			System.out.println("请输入到期后您想要获取的金额：");
+			sumValue=new Scanner(System.in).nextInt();
+			System.out.println("请输入您想要设计的年利率：");
+			rate=new Scanner(System.in).nextDouble();
+			year=1;
+			for(; sumValue>originalMoney;year++){
+				originalMoney= originalMoney*(1+ rate); 
+				  
+			}
+			year--;
+			System.out.println("需要"+year+"年时间");
+		}
+		
+		
+		
 		}
 
 	}
