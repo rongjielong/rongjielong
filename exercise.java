@@ -84,7 +84,7 @@ public class exercise {
 				System.out.println("请问您想要计算利率问题吗：1.需要 2.不需要");
 				select = new Scanner(System.in).nextInt();
 			} while (select != 1 && select != 2);
-		}while (select != 1 && select != 2);
+		//}while (select != 1 && select != 2);
 		if (select == 1) {
 			System.out.println("请输入您想要存储的金额数量：");
 			originalMoney = new Scanner(System.in).nextDouble();
@@ -137,8 +137,30 @@ public class exercise {
 				System.out.println(""+year+"年后资产总值将变为："+sumValue);
 			}
 		}
-		
+		do {
+			System.out.println("请问您想要计算贷款问题吗：1.需要 2.不需要");
+			select = new Scanner(System.in).nextInt();
+		} while (select != 1 && select != 2);
+		if(select==1)
+		{
+			System.out.print("请输入贷款金额：");
+			originalMoney=new Scanner(System.in).nextDouble();
+			System.out.print("请输入贷款的时间期限(年)：");
+			year=new Scanner(System.in).nextInt();
+			System.out.print("请输入贷款的年利率：");
+			rate=new Scanner(System.in).nextDouble();
+			sumValue=originalMoney;
+			for (int i = 1; i <= year; i++) {
+				sumValue = (1 + rate) * sumValue;
+
+			}
+			
+			double returnPay=sumValue/(year*12);
+			System.out.println("每个月应该偿还"+returnPay);
+			
+		}
 
 	}
 
+}
 }
