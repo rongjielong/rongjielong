@@ -5,17 +5,15 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
-public class BTest {
-	B b1=new B();
+public class ETest {
+	E e1=new E();
 	@Before
 	public void setUp() throws Exception {
 	}
 
-	
 	@Test
 	public void test() {
-		
-		 assertEquals(1150.00,b1.test2(1000, 5, 0.03),0.1);
+		assertEquals(86383.76,e1.test5(100000, 0.05, 3),0.05);
 	}
 
 }
