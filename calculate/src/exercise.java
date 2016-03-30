@@ -22,12 +22,30 @@ public class exercise {
 			originalMoney = keyin1.nextDouble();
 			
 		}
+		int year=0;
+		try{
+		do{
 		System.out.println("请输入您想要存储金额的时间(年):");
 		Scanner keyin2 = new Scanner(System.in);
-		int year = keyin2.nextInt();
+		year = keyin2.nextInt();
+		}while(year<=0);
+		}catch(Exception e){
+			System.out.println("请输入您想要存储金额的时间(年):");
+			Scanner keyin2 = new Scanner(System.in);
+			year = keyin2.nextInt();
+		}
+		double rate=0;
+		try{
+		do{
 		System.out.println("请输入您想要设计的年利率：");
 		Scanner keyin3 = new Scanner(System.in);
-		double rate = keyin3.nextDouble();
+		rate = keyin3.nextDouble();
+		}while(rate<=0);
+		}catch(Exception e){
+			System.out.println("请输入您想要设计的年利率：");
+			Scanner keyin3 = new Scanner(System.in);
+			rate = keyin3.nextDouble();
+		}
 		double sumValue = originalMoney;
 		double singleValue;
 		if (select == 1) {
@@ -38,14 +56,33 @@ public class exercise {
 				select = new Scanner(System.in).nextInt();
 			} while (select != 1 && select != 2);
 			if (select == 1) {
+				try{
 				do{
 				System.out.println("请输入您想要筹到的金额：");
 				singleValue = new Scanner(System.in).nextDouble();
 				}while(singleValue<=0);
+				}catch(Exception e){
+					System.out.println("请输入您想要筹到的金额：");
+					singleValue = new Scanner(System.in).nextDouble();
+				}
+				try{
+				do{
 				System.out.println("请输入您想要存储金额的时间(年):");
 				year = new Scanner(System.in).nextInt();
+				}while(year<=0);
+				}catch(Exception e){
+					System.out.println("请输入您想要存储金额的时间(年):");
+					year = new Scanner(System.in).nextInt();
+				}
+				try{
+				do{
 				System.out.println("请输入您想要设计的年利率：");
 				rate = new Scanner(System.in).nextDouble();
+				}while(rate<=0);
+				}catch(Exception e){
+					System.out.println("请输入您想要设计的年利率：");
+					rate = new Scanner(System.in).nextDouble();
+				}
 				originalMoney = singleValue / (1 + rate * year);
 				System.out.println("需要本金" + originalMoney + "元");
 			}
